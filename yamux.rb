@@ -5,28 +5,28 @@
 class Yamux < Formula
   desc "Multiplexer"
   homepage "https://github.com/nwtgck/yamux-cli"
-  version "0.1.0"
+  version "0.2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0/yamux-0.1.0-darwin-amd64.tar.gz"
-    sha256 "2c168872fb53e76fd057cd730a4f38f3419662fa80e40b5325ab3e4810392c6e"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.2.0/yamux-0.2.0-darwin-amd64.tar.gz"
+    sha256 "f64feeb475d89e4c59ef74d967ce84c462a51c51fa1d3330e71c68a9435f20fa"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0/yamux-0.1.0-darwin-arm64.tar.gz"
-    sha256 "14934ac5e0d16c5ca2ca9ead17f9b76ef935f6410af2f1f306241285800c1dd0"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.2.0/yamux-0.2.0-darwin-arm64.tar.gz"
+    sha256 "777e2a96a35c9af60716fe15861b16fcc824d8e146a2ef9a957f989151172fb7"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0/yamux-0.1.0-linux-amd64.tar.gz"
-    sha256 "62132aa76797e4f4c4e5ae130389f473e8bb74175a87e155845ff0e7c81c9b89"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.2.0/yamux-0.2.0-linux-amd64.tar.gz"
+    sha256 "46075ad15ba273fc981916962d203eadcfff5d5c6a68ee464c82f83958e94a56"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0/yamux-0.1.0-linux-armv6.tar.gz"
-    sha256 "0e913fb39495d834af1ce640fc20e5b3cfdcffff9392ed85eb4bcd322c128e0d"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.2.0/yamux-0.2.0-linux-armv6.tar.gz"
+    sha256 "5b7863497ba3f7d016b6eed075eb4cd089b6bfdf1b6f25e678df2f69dcd2b09e"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0/yamux-0.1.0-linux-arm64.tar.gz"
-    sha256 "2004c8fe732e682b2ae8b29e528b4fddbbbbc80dc712ab65659fd2c7010720da"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.2.0/yamux-0.2.0-linux-arm64.tar.gz"
+    sha256 "d5f3f284cef89a4ce4fbac1f8a1ef0cb76833101bda9074a1900fedd157055d8"
   end
 
   def install
