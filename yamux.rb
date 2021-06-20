@@ -5,28 +5,28 @@
 class Yamux < Formula
   desc "Multiplexer"
   homepage "https://github.com/nwtgck/yamux-cli"
-  version "0.1.0-release-trigger1"
+  version "0.3.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0-release-trigger1/yamux-0.1.0-release-trigger1-darwin-amd64.tar.gz"
-    sha256 "5b79d45454749b314c775151711a2ea4fc4ff83c81f1879b3e34ac766367cfd2"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-darwin-amd64.tar.gz"
+    sha256 "36f593dd466414f69c96dd4c173a10e4aae2ae4e66e42107a821392131010e90"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0-release-trigger1/yamux-0.1.0-release-trigger1-darwin-arm64.tar.gz"
-    sha256 "fa27de9b2a535b86643c7e3525b8b7753b795a74f11cf68c4523a670ee9c5229"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-darwin-arm64.tar.gz"
+    sha256 "f548f0b62ae4acb3a386d52cecabcf36b5f343889103ca0a1c8c3f750da98b50"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0-release-trigger1/yamux-0.1.0-release-trigger1-linux-amd64.tar.gz"
-    sha256 "b47bd82ad2325ac9330a2ee61b6c75d66a56b332e0c9cea264e31e1c41e272c4"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-linux-amd64.tar.gz"
+    sha256 "79fbd336637c48840385061df21dba143312f5b716cccc89c23fcf8ef08cb5fb"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0-release-trigger1/yamux-0.1.0-release-trigger1-linux-armv6.tar.gz"
-    sha256 "7f992df861add803791dd83821d9cba0288e99e3a26fc339a6d75fbd7f97b8b4"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-linux-armv6.tar.gz"
+    sha256 "65e5532ce6e9d2cb97d1103a5dfdbbaff71c85854942805ed63859000ddccd5a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.1.0-release-trigger1/yamux-0.1.0-release-trigger1-linux-arm64.tar.gz"
-    sha256 "5817b53d3fa65b6556d976f46593d0c1308b8e9353499eec043ed925bb923b3f"
+    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-linux-arm64.tar.gz"
+    sha256 "f82a64ced3e2fe296e8ca57c1dc058cab3eaf8a629e65ff1ccd21134d01022c2"
   end
 
   def install
