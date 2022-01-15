@@ -5,31 +5,51 @@
 class Yamux < Formula
   desc "Multiplexer"
   homepage "https://github.com/nwtgck/yamux-cli"
-  version "0.3.0"
-  bottle :unneeded
+  version "0.3.1-release-trigger1"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-darwin-amd64.tar.gz"
-    sha256 "36f593dd466414f69c96dd4c173a10e4aae2ae4e66e42107a821392131010e90"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-darwin-arm64.tar.gz"
-    sha256 "f548f0b62ae4acb3a386d52cecabcf36b5f343889103ca0a1c8c3f750da98b50"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-linux-amd64.tar.gz"
-    sha256 "79fbd336637c48840385061df21dba143312f5b716cccc89c23fcf8ef08cb5fb"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-linux-armv6.tar.gz"
-    sha256 "65e5532ce6e9d2cb97d1103a5dfdbbaff71c85854942805ed63859000ddccd5a"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.0/yamux-0.3.0-linux-arm64.tar.gz"
-    sha256 "f82a64ced3e2fe296e8ca57c1dc058cab3eaf8a629e65ff1ccd21134d01022c2"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1-release-trigger1/yamux-0.3.1-release-trigger1-darwin-arm64.tar.gz"
+      sha256 "82bcf9f20373d41844d3138816d0f8f98fe4a8543bb9d9f8aaea6a94ebc4ad55"
+
+      def install
+        bin.install "yamux"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1-release-trigger1/yamux-0.3.1-release-trigger1-darwin-amd64.tar.gz"
+      sha256 "6545eff4d24139d8500780d00e04b8d0a3e8e9b909bef08523b1ee2925e01ebc"
+
+      def install
+        bin.install "yamux"
+      end
+    end
   end
 
-  def install
-    bin.install "yamux"
+  on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1-release-trigger1/yamux-0.3.1-release-trigger1-linux-armv6.tar.gz"
+      sha256 "c89637ed8e3b8f6ee3913fb1458a459cd8ba99007e8fea821227589d7e948481"
+
+      def install
+        bin.install "yamux"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1-release-trigger1/yamux-0.3.1-release-trigger1-linux-amd64.tar.gz"
+      sha256 "20d06adf3d1f0fe3fb399eaed068664447bca4bcd59b024c221a65a5e9276cf2"
+
+      def install
+        bin.install "yamux"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1-release-trigger1/yamux-0.3.1-release-trigger1-linux-arm64.tar.gz"
+      sha256 "db06519cc224020fbdc9e43e1b4eb01cd5542fde9f08319bf47a27e79697f15c"
+
+      def install
+        bin.install "yamux"
+      end
+    end
   end
 end
