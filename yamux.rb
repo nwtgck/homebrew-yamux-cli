@@ -5,20 +5,20 @@
 class Yamux < Formula
   desc "Multiplexer"
   homepage "https://github.com/nwtgck/yamux-cli"
-  version "0.3.1"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1/yamux-0.3.1-darwin-amd64.tar.gz"
-      sha256 "ddf67fdafc425eaf4f48d2cf905058ff304335ab50b8d8ccdeb7757255775f8a"
+    if Hardware::CPU.arm?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.4.0/yamux-0.4.0-darwin-arm64.tar.gz"
+      sha256 "9be15b8116020224c040c7b2fe7465aff53365c7784117498ca69376b3f1b6f9"
 
       def install
         bin.install "yamux"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1/yamux-0.3.1-darwin-arm64.tar.gz"
-      sha256 "5eb0bab37a6b7e1a674808e2bff761ccba44361ee91079d5e2532c81e8ecc160"
+    if Hardware::CPU.intel?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.4.0/yamux-0.4.0-darwin-amd64.tar.gz"
+      sha256 "d01ddb2844667e7f77f4877b9aee8cba6fa353120f99f985c08e8a735fc88efa"
 
       def install
         bin.install "yamux"
@@ -27,25 +27,25 @@ class Yamux < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1/yamux-0.3.1-linux-arm64.tar.gz"
-      sha256 "dfa8f7ba37da3e6507ddfda7fb6f2911cf799575f17808619aeae18cec4c158a"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.4.0/yamux-0.4.0-linux-armv6.tar.gz"
+      sha256 "98de0e11a461ba716f67299a690446555d7d4c1736b3ec528e31be8cffa9d6be"
 
       def install
         bin.install "yamux"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1/yamux-0.3.1-linux-armv6.tar.gz"
-      sha256 "c77cd567dd0c05cf5f2bee2531d4b619ad3b67c4bebbeb122a2a4ca9af350239"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.4.0/yamux-0.4.0-linux-arm64.tar.gz"
+      sha256 "51ea98bb7dfe6d1e64b0aff85676d968092d4c137b1b459f715cbcd906c06c0a"
 
       def install
         bin.install "yamux"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.3.1/yamux-0.3.1-linux-amd64.tar.gz"
-      sha256 "fed4b58d8a8037093062543d9601f44f20936fcaadbb4b0eaaf9f0ad82fff67b"
+      url "https://github.com/nwtgck/yamux-cli/releases/download/v0.4.0/yamux-0.4.0-linux-amd64.tar.gz"
+      sha256 "3fd7c86251a58b5b691c5993d946ab088838bcad726ad06e77ee44b2e3ce8572"
 
       def install
         bin.install "yamux"
